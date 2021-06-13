@@ -12,11 +12,11 @@ namespace TestTaskVirusBlock.Services
     public class CarService
     {
         private readonly CarRepository _repo = new CarRepository();
-        public List<CarPL> GetAllCars()
+        public IEnumerable<CarPL> GetAllCars()
         {
             var configure = new MapperConfiguration(config => config.CreateMap<Car, CarPL>());
             var mapper = new Mapper(configure);
-            var cars = mapper.Map<List<CarPL>>(_repo.GetAllCars());
+            var cars = mapper.Map<IEnumerable<CarPL>>(_repo.GetAllCars());
             return cars;
         }
     }

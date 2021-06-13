@@ -6,3 +6,23 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">Марка</div>
+        <div class="col">Модель</div>
+        <div class="col">Год производства</div>
+        <div class="col">Цвет</div>
+        <div class="col">Тип коробки</div>
+    </div>
+    @foreach (var car in ViewBag.Cars)
+    {
+    <div class="row">
+        <div class="col">@car.Brand</div>
+        <div class="col">@car.Model</div>
+        <div class="col">@car.YearCreation</div>
+        <div class="col">@car.Color</div>
+        <div class="col">@car.IsAutomaticTransmission</div>
+    </div>
+    }
+</div>

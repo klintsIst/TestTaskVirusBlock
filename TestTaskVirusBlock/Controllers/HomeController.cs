@@ -24,7 +24,7 @@ namespace TestTaskVirusBlock.Controllers
         public IActionResult Index()
         {
             var carsList = _carService.GetAllCars();
-            Console.WriteLine(carsList);
+            ViewBag.Cars = carsList;
             return View();
         }
 
