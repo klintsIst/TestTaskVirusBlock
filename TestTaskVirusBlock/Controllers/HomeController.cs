@@ -6,11 +6,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TestTaskVirusBlock.Models;
+using TestTaskVirusBlock.Services;
 
 namespace TestTaskVirusBlock.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly CarService _carService = new CarService();
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -20,6 +23,8 @@ namespace TestTaskVirusBlock.Controllers
 
         public IActionResult Index()
         {
+            var carsList = _carService.GetAllCars();
+            Console.WriteLine(carsList);
             return View();
         }
 
