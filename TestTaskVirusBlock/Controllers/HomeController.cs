@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TestTaskVirusBlock.Models;
+using TestTaskVirusBlock.ModelsPL;
 using TestTaskVirusBlock.Services;
 
 namespace TestTaskVirusBlock.Controllers
@@ -26,6 +27,19 @@ namespace TestTaskVirusBlock.Controllers
             var carsList = _carService.GetAllCars();
             ViewBag.Cars = carsList;
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult NewCar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public string NewCar(CarPL carPl)
+        {
+            string guid = _carService.CreateCar(carPl);
+            return "Новое авто с ИД - " + guid + " успешно создано!";
         }
 
         public IActionResult Privacy()

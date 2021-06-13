@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "New Car";
+}
+
+<div class="container">
+    <div class="h3">Форма добавления авто</div>
+
+    <form method="post" action="">
+        <div class="row">
+            <div class="col">
+                <p>Марка авто</p>
+                <input type="text" name="Brand" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Модель авто</p>
+                <input type="text" name="Model" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Год создания авто</p>
+                <input type="date" name="YearCreation" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Цвет авто</p>
+                <input type="text" name="Color" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Тип КП</p>
+                <input type="checkbox" name="IsAutomaticTransmission" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="submit" value="Создать" />
+            </div>
+        </div>
+    </form>
+
+</div>

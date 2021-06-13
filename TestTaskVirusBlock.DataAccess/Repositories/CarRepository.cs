@@ -20,5 +20,16 @@ namespace TestTaskVirusBlock.DataAccess.Repositories
         {
             return _context.Cars.ToList();
         }
+
+        public string AddNewCar(Car car)
+        {
+            if (car.Id is null)
+            {
+                car.Id = Guid.NewGuid().ToString();
+            }
+            _context.Cars.Add(car);
+            _context.SaveChanges();
+            return car.Id;
+        }
     }
 }
