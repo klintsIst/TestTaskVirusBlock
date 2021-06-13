@@ -14,6 +14,7 @@ namespace TestTaskVirusBlock.Controllers
     public class HomeController : Controller
     {
         private readonly CarService _carService = new CarService();
+        private readonly PersonService _personService = new PersonService();
 
         private readonly ILogger<HomeController> _logger;
 
@@ -26,6 +27,8 @@ namespace TestTaskVirusBlock.Controllers
         {
             var carsList = _carService.GetAllCars();
             ViewBag.Cars = carsList;
+            var personList = _personService.GetAllPersons();
+            ViewBag.Persons = personList;
             return View();
         }
 
@@ -40,6 +43,19 @@ namespace TestTaskVirusBlock.Controllers
         {
             string guid = _carService.CreateCar(carPl);
             return "Новое авто с ИД - " + guid + " успешно создано!";
+        }
+
+        [HttpGet]
+        public ActionResult NewPerson()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public string NewPerson(PersonPL personPL)
+        {
+            string guid = _personService.CreatePerson(personPL);
+            return "Новый человек с ИД - " + guid + " успешно создан!";
         }
 
         public IActionResult Privacy()

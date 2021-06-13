@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace TestTaskVirusBlock.ModelsPL
 {
+    /// <summary>
+    /// Модель для работы с авто на PL
+    /// </summary>
     public class CarPL
     {
         /// <summary>

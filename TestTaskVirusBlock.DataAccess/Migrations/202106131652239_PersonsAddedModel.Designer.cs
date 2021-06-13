@@ -7,13 +7,13 @@ namespace TestTaskVirusBlock.DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class CarsAddedModel : IMigrationMetadata
+    public sealed partial class PersonsAddedModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CarsAddedModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PersonsAddedModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106121736207_CarsAddedModel"; }
+            get { return "202106131652239_PersonsAddedModel"; }
         }
         
         string IMigrationMetadata.Source

@@ -29,3 +29,18 @@
         <a href="/Home/NewCar/">Новое авто</a>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">Имя-Фамилия</div>
+    </div>
+    @foreach (var person in ViewBag.Persons)
+    {
+        <div class="row">
+            <div class="col">@person.FirstName + " " + @person.LastName</div>
+        </div>
+    }
+    <div class="row">
+        <a href="/Home/NewPerson/">Новый человек</a>
+    </div>
+</div>
